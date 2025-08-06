@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-900 p-4">
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow-2xl w-full max-w-md">
+        <input type="text" id="display" readonly
+            class="w-full h-14 md:h-16 text-right text-2xl md:text-3xl mb-4 p-3 border-2 border-gray-700 bg-gray-700 text-white rounded-lg focus:outline-none font-mono tracking-wide" />
+
+        <div class="grid grid-cols-5 gap-2 md:gap-3 text-sm md:text-lg">
+            <!-- Scientific Functions -->
+            <button onclick="scientific('sin')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">SIN</button>
+            <button onclick="scientific('cos')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">COS</button>
+            <button onclick="scientific('tan')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">TAN</button>
+            <button onclick="scientific('abs')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">ABS</button>
+            <button onclick="appendValue('Math.E')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">e</button>
+
+            <button onclick="scientific('sqrt')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">√</button>
+            <button onclick="scientific('sqr')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">SQR</button>
+            <button onclick="appendValue('^')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">^</button>
+            <button onclick="scientific('log')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">LOG</button>
+            <button onclick="scientific('ln')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">ln</button>
+
+            <!-- Utility -->
+            <button onclick="clearDisplay()" class="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded">CLR</button>
+            <button onclick="appendValue('(')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">(</button>
+            <button onclick="appendValue(')')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">)</button>
+            <button onclick="appendValue('%')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">MOD</button>
+            <button onclick="deleteLast()" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded">DEL</button>
+
+            <!-- Digits -->
+            <button onclick="appendValue('7')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">7</button>
+            <button onclick="appendValue('8')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">8</button>
+            <button onclick="appendValue('9')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">9</button>
+            <button onclick="appendValue('*')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">×</button>
+            <button onclick="appendValue('/')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">÷</button>
+
+            <button onclick="appendValue('4')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">4</button>
+            <button onclick="appendValue('5')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">5</button>
+            <button onclick="appendValue('6')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">6</button>
+            <button onclick="appendValue('+')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">+</button>
+            <button onclick="appendValue('-')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">−</button>
+
+            <button onclick="appendValue('1')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">1</button>
+            <button onclick="appendValue('2')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">2</button>
+            <button onclick="appendValue('3')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">3</button>
+            <button onclick="memoryPlus()" class="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded">M+</button>
+            <button onclick="memoryRecall()" class="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded">MR</button>
+
+            <button onclick="appendValue('0')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">0</button>
+            <button onclick="appendValue('.')" class="bg-gray-600 hover:bg-gray-500 text-white p-2 rounded">.</button>
+            <button onclick="appendValue('Math.PI')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded">Pi</button>
+            <button onclick="memoryClear()" class="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded">MC</button>
+            <button onclick="calculate()" class="bg-green-500 hover:bg-green-600 text-white text-xl p-2 rounded">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
